@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+  <div>
+	<f:view locale="#{language.locale}"/>
+	<h:form>
+	  <ul>
+		<li>
+		  <h:commandLink action="home?faces-redirect=true">
+			<h:outputText value="#{msg.linkHome}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="add?faces-redirect=true">
+			<h:outputText value="#{msg.personAddLabel}" />
+		  </h:commandLink></li>
+		<li>
+		  <h:commandLink action="showPersons?faces-redirect=true">
+			 <h:outputText value="#{msg.personAllLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+			<h:commandLink  itemLabel="Angielski"
+			itemValue="en" actionListener="#{language.choose}">
+						<h:outputText value="#{msg.languageEnglish}"/>
+						<f:param value="en" name="locale"/>
+			</h:commandLink>
+			</li><li>
+			<h:commandLink  itemLabel="Polski"
+			itemValue="pl" actionListener="#{language.choose}">
+						<h:outputText value="#{msg.languagePolish}"/>
+						<f:param value="pl" name="locale"/>
+			</h:commandLink>
+		</li>
+	</ul>
+   </h:form>
+  </div>
+</ui:composition>
