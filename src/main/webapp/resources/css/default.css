@@ -1,20 +1,21 @@
 body {
    margin: 0;
    padding: 0;
-   background-color:  lightGray;
-   font-family: Verdana, sans-serif;
+   background-color:  yellow;
+   font-family: Arial;
    font-size: 0.9em;
+   
 }
-
+a:hover{ color:red; }
 .heading {
   padding: 10px;
   background: #FFFFFF;
-  border: 1px solid blue;
+  border: 10px solid blue;
   font-size: 1.4em;
   font-style: italic;
   font-family: Verdana;
   text-align: center;
-  height: 50px;
+  height: 30px;
 }
 
 .menuAndContent {

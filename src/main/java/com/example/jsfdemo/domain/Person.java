@@ -21,5 +21,12 @@ public class Person {
 	public void setYob(int yob) {
 		this.yob = yob;
 	}
+	boolean editable;
+	public boolean isEditable() {
+		return editable;
+	}
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 
 }

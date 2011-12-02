@@ -5,22 +5,30 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/templates/default.xhtml">
 	<ui:define name="content">
-     
-     <h:dataTable value="#{personBean.allPersons}" var="item">
+     <h:form id="showform">
+     <h:dataTable rowIndexVar="row" value="#{personBean.allPersons}" var="item">
       <f:facet name="header">#{msg.personAllLabel}</f:facet>
-      
       <h:column>
         <f:facet name="header">#{msg.personNameLabel}</f:facet>
-        #{item.name}
+       <h:inputText value="#{item.name}" size="10" rendered="#{item.editable}" />
+ 
+    <h:outputText value="#{item.name}" rendered="#{not item.editable}" />
       </h:column>
-      
       <h:column>
         <f:facet name="header">#{msg.personYobLabel}</f:facet>
-        #{item.yob}
+               <h:inputText value="#{item.yob}" size="10" rendered="#{item.editable}" />
+ 
+    <h:outputText value="#{item.yob}" rendered="#{not item.editable}" />
       </h:column>
-      
+      <h:column>
+      <h:commandLink value="#{msg.edit}" action="#{personBean.editAction(item)}" rendered="#{not item.editable}" />
+      </h:column>
+      <h:column>
+      <h:commandLink value="#{msg.del}" action="#{personBean.delPerson(item)}" rendered="#{not item.editable}" />
+      </h:column>
      </h:dataTable>
-      
+     <h:commandButton value="#{msg.save}" action="#{personBean.saveAction}"/>
+      </h:form>
      <h:form>
         <h:commandLink value="#{msg.personAddLabel}" action="add" />
      </h:form>

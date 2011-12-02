@@ -21,4 +21,16 @@ public class PersonManager {
 	public List<Person> getAllPerson(){
 		return db;
 	}
+	public void removePerson(Person p) {
+		db.remove(p);
+		
+	}
+	public void setPerson(int i, Person p) {
+		db.set(i,  p);
+		
+	}
+	public Person getPerson(int i)
+	{
+		return db.get(i);
+	}
 }
